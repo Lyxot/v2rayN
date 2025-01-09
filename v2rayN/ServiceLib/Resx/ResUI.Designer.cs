@@ -1679,6 +1679,24 @@ namespace ServiceLib.Resx {
                 return ResourceManager.GetString("menuSystemProxySet", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   查找类似 Copy Terminal Proxy Command 的本地化字符串。
+        /// </summary>
+        public static string menuCopyTerminalProxyCommand {
+            get {
+                return ResourceManager.GetString("menuCopyTerminalProxyCommand", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///  查找类似 Copy Terminal Proxy Command Successfully 的本地化字符串。
+        ///  </summary>
+        public static string CopyTerminalProxyCommandSuccessfully {
+            get {
+                return ResourceManager.GetString("CopyTerminalProxyCommandSuccessfully", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   查找类似 Test servers with tcping (Ctrl+O) 的本地化字符串。

@@ -478,6 +478,12 @@
   <data name="menuSystemProxySet" xml:space="preserve">
     <value>Set system proxy</value>
   </data>
+  <data name="menuCopyTerminalProxyCommand" xml:space="preserve">
+    <value>Copy terminal proxy command</value>
+  </data>
+  <data name="CopyTerminalProxyCommandSuccessfully" xml:space="preserve">
+    <value>Copy terminal proxy command successfully</value>
+  </data>
   <data name="TbSettingsColor" xml:space="preserve">
     <value>Color</value>
   </data>

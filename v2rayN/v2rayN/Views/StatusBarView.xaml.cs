@@ -34,6 +34,7 @@ namespace v2rayN.Views
                 this.BindCommand(ViewModel, vm => vm.SystemProxySetCmd, v => v.menuSystemProxySet).DisposeWith(disposables);
                 this.BindCommand(ViewModel, vm => vm.SystemProxyPacCmd, v => v.menuSystemProxyPac).DisposeWith(disposables);
                 this.BindCommand(ViewModel, vm => vm.SystemProxyNothingCmd, v => v.menuSystemProxyNothing).DisposeWith(disposables);
+                this.BindCommand(ViewModel, vm => vm.CopyTerminalProxyCmd, v => v.menuCopyTerminalProxy).DisposeWith(disposables);                
 
                 //routings and servers
                 this.OneWayBind(ViewModel, vm => vm.RoutingItems, v => v.cmbRoutings.ItemsSource).DisposeWith(disposables);

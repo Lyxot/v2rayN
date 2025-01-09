@@ -478,6 +478,12 @@
   <data name="menuSystemProxySet" xml:space="preserve">
     <value>自动配置系统代理</value>
   </data>
+  <data name="menuCopyTerminalProxyCommand" xml:space="preserve">
+    <value>复制终端代理命令</value>
+  </data>
+  <data name="CopyTerminalProxyCommandSuccessfully" xml:space="preserve">
+    <value>复制终端代理命令成功</value>
+  </data>
   <data name="TbSettingsColor" xml:space="preserve">
     <value>颜色</value>
   </data>

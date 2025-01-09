@@ -58,6 +58,10 @@
                             Header="{x:Static resx:ResUI.menuSystemProxyNothing}"
                             Icon="/Assets/NotifyIcon3.ico"
                             IsVisible="{Binding BlSystemProxyNothing}" />
+                            
+                        <NativeMenuItem
+                            Command="{Binding CopyTerminalProxyCmd}"
+                            Header="{x:Static resx:ResUI.menuCopyTerminalProxyCommand}" />
                         <NativeMenuItemSeparator />
                         <NativeMenuItem Click="MenuAddServerViaClipboardClick" Header="{x:Static resx:ResUI.menuAddServerViaClipboard}" />
                         <NativeMenuItem Header="{x:Static resx:ResUI.menuAddServerViaScan}" IsVisible="False" />
