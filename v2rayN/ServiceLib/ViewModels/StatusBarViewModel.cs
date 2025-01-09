@@ -52,6 +52,7 @@ namespace ServiceLib.ViewModels
         public ReactiveCommand<Unit, Unit> SystemProxySetCmd { get; }
         public ReactiveCommand<Unit, Unit> SystemProxyNothingCmd { get; }
         public ReactiveCommand<Unit, Unit> SystemProxyPacCmd { get; }
+        public ReactiveCommand<Unit, Unit> CopyTerminalProxyCmd { get; }
 
         [Reactive]
         public bool BlRouting { get; set; }
@@ -166,6 +167,12 @@ namespace ServiceLib.ViewModels
             SystemProxyPacCmd = ReactiveCommand.CreateFromTask(async () =>
             {
                 await SetListenerType(ESysProxyType.Pac);
+            });
+
+            // Copy terminal proxy command
+            CopyTerminalProxyCmd = ReactiveCommand.CreateFromTask(async () =>
+            {
+                await CopyTerminalProxyCommand();
             });
 
             #endregion WhenAnyValue && ReactiveCommand
@@ -425,6 +432,20 @@ namespace ServiceLib.ViewModels
                 return _config.TunModeItem.LinuxSudoPwd.IsNotEmpty();
             }
             return false;
+        }
+
+        private async Task CopyTerminalProxyCommand()
+        {
+            if (_config.InItem.LocalPort.IsNotEmpty())
+            {
+                StringBuilder sb = new();
+                sb.Append($"export http_proxy=http://127.0.0.1:{_config.InItem.LocalPort}; export https_proxy=http://127.0.0.1:{_config.InItem.LocalPort}; exoprt all_proxy=socks5://127.0.0.1:{_config.InItem.LocalPort}");
+                if (sb.Length > 0)
+                {
+                    await _updateView?.Invoke(EViewAction.SetClipboardData, sb.ToString());
+                    NoticeHandler.Instance.SendMessage(ResUI.CopyTerminalProxyCommandSuccessfully);
+                }
+            }
         }
 
         #endregion System proxy and Routings

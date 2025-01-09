@@ -44,6 +44,9 @@
                             Header="{x:Static resx:ResUI.menuSystemProxyNothing}"
                             IsChecked="{Binding BlSystemProxyNothing}"
                             ToggleType="Radio" />
+                        <NativeMenuItem
+                            Command="{Binding CopyTerminalProxyCmd}"
+                            Header="{x:Static resx:ResUI.menuCopyTerminalProxyCommand}" />
                         <NativeMenuItemSeparator />
                         <NativeMenuItem Click="MenuAddServerViaClipboardClick" Header="{x:Static resx:ResUI.menuAddServerViaClipboard}" />
                         <NativeMenuItem Header="{x:Static resx:ResUI.menuAddServerViaScan}" IsVisible="False" />
